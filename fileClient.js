@@ -6,7 +6,7 @@ var name = 'sample';
 var ext = 'txt';
 var url = 'http://localhost:18881/files';
 var json = {name:name, ext:ext};
-var apikey = 'some api key for my app';
+var apikey = '1234';
 
 request = request.defaults({headers:{apikey:apikey}});
 

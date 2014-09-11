@@ -10,6 +10,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+var apikey = '1234';
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -22,10 +24,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-    var apikey = req.headers['apikey'];
-    if(apikey !== 'some api key for my app') {
+    var headerApikey = req.headers['apikey'];
+    if(headerApikey !== apikey) {
         console.log('Failed apikey:', apikey);
-        res.send({error: 'Bad apikey : '+'"'+apikey+'"'});
+        res.send({error: 'Bad apikey : '+'"'+headerApikey+'"'});
     } else { 
         next();
     }
