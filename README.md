@@ -7,4 +7,10 @@ npm install
 
 npm start
 
-node ./fileClient.js
+npm test
+
+or
+
+./fileClient.js
+
+
